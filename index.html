@@ -31,7 +31,23 @@
     </header>
     <main id="login">
       <div id="login-container">
-        <div id="form"></div>
+        <div id="login-form">
+          <span id="heading-text">Login and begin your study</span>
+          <br />
+          <form action="./index.html" onsubmit="return validation()">
+            <input type="text" id="email" placeholder="Enter your email" />
+            <span id="ewarn" class="warning">Wrong Email</span>
+            <br />
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+            />
+            <span id="pwarn" class="warning">Wrong Password</span>
+            <br />
+            <button type="submit" id="submit-button">Submit</button>
+          </form>
+        </div>
       </div>
     </main>
     <!-- <main>
@@ -59,4 +75,5 @@
       </div>
     </main> -->
   </body>
+  <script src="./script.js"></script>
 </html>
