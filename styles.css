@@ -14,8 +14,13 @@ a {
   outline: none;
 }
 
+a i {
+  transform: scale(2);
+}
+
 input {
   font-family: "Montserrat", sans-serif;
+  outline: none;
 }
 
 header {
@@ -49,10 +54,6 @@ header h1 {
 #hero {
   color: orange;
   font-size: 65px;
-}
-
-header i {
-  transform: scale(2);
 }
 
 main {
