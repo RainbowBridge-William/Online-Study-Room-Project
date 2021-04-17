@@ -20,7 +20,7 @@ a i {
 }
 
 button {
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 input {
@@ -152,6 +152,7 @@ input {
 }
 
 .join-wrap .join-info {
+  border-radius: 30px;
   position: absolute;
   padding: 0 20px;
   top: -60px;
@@ -167,6 +168,7 @@ input {
 }
 
 .join-wrap .join-form {
+  border-radius: 30px;
   position: absolute;
   padding: 70px 70px;
   padding-left: 200px;
@@ -181,7 +183,8 @@ input {
 .join-info h2 {
   text-align: center;
   line-height: 50px;
-  font-weight: 400;
+  font-weight: 500;
+  font-size: 26px;
 }
 
 .join-wrap .join-form h2 {
