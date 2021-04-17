@@ -158,8 +158,11 @@ document.getElementById("join").onclick = function () {
       audio: true,
     });
 
+    globalStream = localStream;
+
     localStream.init(function () {
       localStream.play("SelfStream");
+      document.getElementById("SelfStream").classList.add("video-border");
       console.log(`App id: ${appId}\nChannel id: ${channelName}`);
       client.publish(localStream);
     }, handlefail);
@@ -192,14 +195,17 @@ document.getElementById("join").onclick = function () {
 
 document.getElementById("leave").onclick = function () {
   client.leave(function () {
-    localStream.stop();
-    client.unpublish(localStream);
-    localStream.close();
+    globalStream.stop();
+    document.getElementById("SelfStream").classList.remove("video-border");
+    client.unpublish(globalStream);
+    globalStream.close();
   });
 
-  // let remoteContainers = document.querySelectorAll(".remoteStream");
-  // let local;
-  // remoteContainers.forEach(function (e) {
-  //   e.removeChild();
-  // });
+  let remoteContainers = document.querySelectorAll(".remoteStream");
+  console.log(remoteContainers);
+  remoteContainers.forEach(function (e) {
+    if (e.firstElementChild) {
+      e.firstElementChild.remove();
+    } 
+  });
 };
