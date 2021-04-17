@@ -25,11 +25,11 @@
           <h2>Tell us about yourself</h2>
           <div class="form-box">
             <div class="input-box w50">
-              <input type="text" required />
+              <input type="text" id="userName" required />
               <span>User Name</span>
             </div>
             <div class="input-box w50">
-              <input type="text" required />
+              <input type="text" id="channelName" required />
               <span>Channel Name</span>
             </div>
             <div class="input-box w100">
@@ -41,7 +41,7 @@
               <span>What are going to study today? (Math / CS / etc.)</span>
             </div>
             <div class="input-box w100">
-              <button class="input-box w100">Join</button>
+              <button class="input-box w100" id="join">Join</button>
             </div>
           </div>
         </div>
@@ -51,23 +51,25 @@
     <main id="study-room">
       <div id="video-container">
         <div id="row1">
-          <div class="remoteStream"></div>
-          <div class="remoteStream"></div>
-          <div class="remoteStream"></div>
+          <div class="remoteStream" id="3"></div>
+          <div class="remoteStream" id="4"></div>
+          <div class="remoteStream" id="5"></div>
         </div>
         <div id="row2">
           <div id="SelfStream"></div>
-          <div class="remoteStream"></div>
-          <div class="remoteStream"></div>
+          <div class="remoteStream" id="1"></div>
+          <div class="remoteStream" id="2"></div>
         </div>
       </div>
       <section id="features">
         <button class="submitButton" id="MAudio">Mute Audio</button>
-        <button class="submitButton" id="Mvideo">Mute Video</button>
+        <button class="submitButton" id="MVideo">Mute Video</button>
         <button class="submitButton" id="leave">Leave</button>
       </section>
     </main>
   </body>
+  <script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.1.1.js"></script>
+  <script src="./agoraRtc.js"></script>
 </html>
 
 <!-- <a href="https://www.freepik.com/vectors/background"

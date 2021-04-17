@@ -84,7 +84,6 @@ main {
   box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.3);
 }
 
-
 #login-form form {
   display: flex;
   flex-direction: column;
@@ -290,9 +289,13 @@ button:hover {
 
 #SelfStream,
 .remoteStream {
-  border: rgba(255, 168, 6, 0.3) 2px solid;
   width: 20vw;
   height: 20vh;
+  z-index: 99;
+}
+
+.video-border {
+  border: rgba(255, 168, 6, 0.3) 2px solid;
 }
 
 #features {
