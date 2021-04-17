@@ -204,7 +204,7 @@ document.getElementById("leave").onclick = function () {
   let remoteContainers = document.querySelectorAll(".remoteStream");
   console.log(remoteContainers);
   remoteContainers.forEach(function (e) {
-    if (e.firstElementChild) {
+    if (e.firstElementChild) { // have to check existence then multiple multiplate
       e.firstElementChild.remove();
     } 
   });
