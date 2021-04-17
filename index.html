@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
@@ -19,19 +23,19 @@
     <header>
       <div id="welcome-left">
         <section id="title">
-          <h1>
+          <h1 class="animate__animated animate__fadeInLeft">
             <span id="hero">The Study Community</span>
             <br />
             at your fingertips
           </h1>
         </section>
-        <a href="#login"><i class="fas fa-chevron-down"></i></a>
+        <a href="#login"><i class="fas fa-chevron-down fa-2x animate__animated animate__fadeInDown animate__delay-1s"></i></a>
       </div>
       <div id="welcome-right"></div>
     </header>
     <main id="login">
       <div id="login-container">
-        <div id="login-form">
+        <div id="login-form" class="animate__animated animate__fadeIn animate__delay-2s">
           <span id="heading-text">Login and begin your study</span>
           <br />
           <form action="./studyroom.html" onsubmit="return validation()">
@@ -45,7 +49,7 @@
             />
             <span id="pwarn" class="warning">Wrong Password</span>
             <br />
-            <button type="submit" id="submit-button" >Submit</button>
+            <button type="submit" id="submit-button">Submit</button>
           </form>
         </div>
       </div>
