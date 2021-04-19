@@ -1,86 +1,3 @@
-// let handlefail = function (err) {
-//   console.log(err);
-// };
-
-// let count = 1;
-
-// function addVideoStream(streamId) {
-//   console.log();
-//   let remoteContainer = document.getElementById("1");
-//   let streamDiv = document.createElement("div");
-//   streamDiv.id = streamId;
-//   // streamDiv.style.transform = "rotateY(180deg)";
-//   streamDiv.style.height = "250px";
-//   remoteContainer.appendChild(streamDiv);
-// }
-
-// function addVideoStream(streamId) {
-//   if (count > 5) {
-//     alert("There's no available seat");
-//     return;
-//   }
-//   console.log();
-//   let remoteContainer = document.getElementById(1);
-//   let streamDiv = document.createElement("div");
-//   streamDiv.id = streamId;
-//   // streamDiv.style.transform = "rotateY(180deg)";
-//   streamDiv.style.height = "20vh";
-//   streamDiv.style.width = "20vw";
-//   remoteContainer.appendChild(streamDiv);
-//   remoteContainer.classList.add("video-border");
-//   count++;
-// }
-
-// document.getElementById("join").onclick = function () {
-//   let channelName = document.getElementById("channelName").value;
-//   let userName = document.getElementById("userName").value;
-//   let appId = "2efe191143764189bcb44d62b0003a98";
-
-//   let client = AgoraRTC.createClient({
-//     mode: "live",
-//     codec: "h264",
-//   });
-
-//   client.init(
-//     appId,
-//     () => console.log("AgoraRTC Client Connected"),
-//     handlefail
-//   );
-
-//   client.join(null, channelName, userName, () => {
-//     var localStream = AgoraRTC.createStream({
-//       video: true,
-//       audio: true,
-//     });
-
-//     localStream.init(function () {
-//       localStream.play("SelfStream");
-//       console.log(`App id: ${appId}\nChannel id: ${channelName}`);
-//       client.publish(localStream);
-//     });
-
-//     globalStream = localStream;
-//   });
-
-//   client.on("stream-added", function (evt) {
-//     console.log("Added Stream");
-//     client.subscribe(evt.stream.getVideoTrack);
-//   });
-
-//   client.on("stream-subscribed", function (evt) {
-//     console.log("Subscribed Stream");
-//     let stream = evt.stream;
-//     addVideoStream(stream.getId());
-//     stream.play(stream.getId());
-//   });
-
-//   document.getElementById("leave").onclick = function () {
-//     client.leave();
-//   };
-
-//   location.href = "#study-room";
-// };
-
 let handlefail = function (err) {
   console.log(err);
 };
@@ -191,7 +108,6 @@ document.getElementById("join").onclick = function () {
     stream.close();
     removeVideoStream(stream.getId());
   })
-
   location.href = "#study-room";
 };
 
