@@ -191,6 +191,8 @@ document.getElementById("join").onclick = function () {
     stream.close();
     removeVideoStream(stream.getId());
   })
+
+  location.href = "#study-room";
 };
 
 document.getElementById("leave").onclick = function () {
