@@ -9,8 +9,8 @@ function addVideoStream(streamId) {
     alert("There's no available seat");
     return;
   }
-  console.log();
-  let remoteContainer = document.getElementById(count);
+  let id = `block${count}`;
+  let remoteContainer = document.getElementById(id);
   let streamDiv = document.createElement("div");
   streamDiv.id = streamId;
   streamDiv.style.transform = "rotateY(180deg)";
@@ -35,9 +35,11 @@ document.getElementById("MAudio").onclick = function () {
   if (isAudioEnable) {
     isAudioEnable = false;
     globalStream.muteAudio();
+    alert("Audio Off");
   } else {
     isAudioEnable = true;
     globalStream.unmuteAudio();
+    alert("Audio On");
   }
 };
 
@@ -107,7 +109,8 @@ document.getElementById("join").onclick = function () {
     let stream = evt.stream;
     stream.close();
     removeVideoStream(stream.getId());
-  })
+    count--;
+  });
   location.href = "#study-room";
 };
 
@@ -122,8 +125,10 @@ document.getElementById("leave").onclick = function () {
   let remoteContainers = document.querySelectorAll(".remoteStream");
   console.log(remoteContainers);
   remoteContainers.forEach(function (e) {
-    if (e.firstElementChild) { // have to check existence then multiple multiplate
+    if (e.firstElementChild) {
+      // have to check existence then multiple multiplate
       e.firstElementChild.remove();
-    } 
+    }
   });
+  count = 1;
 };
