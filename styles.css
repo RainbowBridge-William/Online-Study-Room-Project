@@ -7,6 +7,7 @@ html {
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
   --animate-duration: 1.5s;
+  --animation-delay: 1s;
 }
 
 a {
@@ -248,7 +249,7 @@ button {
   outline: none;
 }
 
-button:hover {
+.active, button:hover {
   background: rgb(255, 145, 0);
   color: white;
   cursor: pointer;

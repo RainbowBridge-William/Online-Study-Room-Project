@@ -31,25 +31,27 @@ let globalStream;
 let isVideoEnable = true;
 let isAudioEnable = true;
 
-document.getElementById("MAudio").onclick = function () {
+document.getElementById("MAudio").onclick = function (e) {
   if (isAudioEnable) {
     isAudioEnable = false;
     globalStream.muteAudio();
-    alert("Mic OFF");
+    e.target.classList.add("active");
   } else {
     isAudioEnable = true;
     globalStream.unmuteAudio();
-    alert("Mic ON");
+    e.target.classList.remove("active");
   }
 };
 
-document.getElementById("MVideo").onclick = function () {
+document.getElementById("MVideo").onclick = function (e) {
   if (isVideoEnable) {
     isVideoEnable = false;
     globalStream.muteVideo();
+    e.target.classList.add("active");
   } else {
     isVideoEnable = true;
     globalStream.unmuteVideo();
+    e.target.classList.remove("active");
   }
 };
 
