@@ -35,11 +35,11 @@ document.getElementById("MAudio").onclick = function () {
   if (isAudioEnable) {
     isAudioEnable = false;
     globalStream.muteAudio();
-    alert("Audio Off");
+    alert("Mic OFF");
   } else {
     isAudioEnable = true;
     globalStream.unmuteAudio();
-    alert("Audio On");
+    alert("Mic ON");
   }
 };
 
