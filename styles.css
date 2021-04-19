@@ -249,11 +249,32 @@ button {
   outline: none;
 }
 
-.active, button:hover {
+#features button:hover {
+  opacity: 1;
+  background: none;
+  color: rgb(255, 220, 174);
+  border-color: rgb(255, 220, 174);
+}
+
+#features button.active, button:hover {
   background: rgb(255, 145, 0);
+  border-color: rgb(255, 145, 0);
   color: white;
   cursor: pointer;
 }
+
+#features button {
+  margin: 0 auto;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+
+#features #leave:hover {
+  background-color: red;
+  border-color: red;
+}
+
+
 
 .join-wrap .join-form .form-box .input-box span {
   position: absolute;
@@ -319,19 +340,4 @@ button {
   justify-content: center;
   margin-bottom: 10px;
   background-color: rgba(0, 0, 0, 0.25);
-}
-
-#features button {
-  margin: 0 auto;
-  opacity: 0.8;
-  border-radius: 10px;
-}
-
-#features button:hover {
-  opacity: 1;
-}
-
-#features #leave:hover {
-  background-color: red;
-  border-color: red;
 }
