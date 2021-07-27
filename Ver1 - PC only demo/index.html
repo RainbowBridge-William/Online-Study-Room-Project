@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/7a0431b0d6.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Welcome Page</title>
+  </head>
+  <body>
+    <header>
+      <div id="welcome-left">
+        <section id="title">
+          <h1 class="animate__animated animate__fadeInLeft">
+            <span id="hero">The Study Community</span>
+            <br />
+            at your fingertips
+          </h1>
+        </section>
+        <a href="#login"><i class="fas fa-chevron-down fa-2x animate__animated animate__fadeInDown animate__delay-1s"></i></a>
+      </div>
+      <div id="welcome-right"></div>
+    </header>
+    <main id="login">
+      <div id="login-container">
+        <div id="login-form" class="animate__animated animate__fadeIn animate__delay-2s">
+          <span id="heading-text">Login and begin your study</span>
+          <br />
+          <form action="./studyroom.html" onsubmit="return validation()">
+            <input type="text" id="email" placeholder="Enter your email" />
+            <span id="ewarn" class="warning">Wrong Email</span>
+            <br />
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+            />
+            <span id="pwarn" class="warning">Wrong Password</span>
+            <br />
+            <button type="submit" id="submit-button">Submit</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <!-- <main>
+      <div id="join-container">
+        <div id="join-left-pane">
+          <h2>Tell us about yourself</h2>
+        </div>
+        <div id="join-right-pane">
+          <div id="form">
+            <div class="input-box w50">
+              <input type="text" required /><span>User Name</span>
+            </div>
+            <div class="input-box w50">
+              <input type="text" required /><span>Channel Name</span>
+            </div>
+            <div class="input-box w50">
+              <input type="text" /><span>Interest</span>
+            </div>
+            <div class="input-box w50">
+              <input type="text" /><span>Grade</span>
+            </div>
+            <button id="join">Join</button>
+          </div>
+        </div>
+      </div>
+    </main> -->
+  </body>
+  <script src="./script.js"></script>
+</html>

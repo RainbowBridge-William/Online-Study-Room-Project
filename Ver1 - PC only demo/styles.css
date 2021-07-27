@@ -1,0 +1,343 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+  --animate-duration: 1.5s;
+  --animation-delay: 1s;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+a i {
+  transform: scale(2);
+}
+
+button {
+  border-radius: 10px;
+}
+
+input {
+  font-family: "Montserrat", sans-serif;
+  outline: none;
+}
+
+header {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+header #welcome-left {
+  width: 66%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header #welcome-right {
+  width: 34%;
+  height: 100%;
+  background-image: url(./resource/background-welcome.jpg);
+  background-size: cover;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.25);
+}
+
+header h1 {
+  line-height: 6rem;
+  font-size: 55px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+#hero {
+  color: orange;
+  font-size: 65px;
+}
+
+main {
+  height: 100vh;
+}
+
+#login {
+  background: url(./resource/1.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+
+#login-container {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login-form {
+  --animate-delay: 1.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  height: 60%;
+  background-color: white;
+  box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.3);
+}
+
+#login-form button {
+  margin-top: 30px;
+}
+
+#login-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 20%;
+}
+
+.incorrect {
+  border: 2px solid red;
+}
+
+.warning {
+  color: red;
+  display: none;
+}
+
+#heading-text {
+  color: black;
+  font-size: 32px;
+  text-align: center;
+}
+
+input {
+  margin-top: 20px;
+  border-radius: 5px;
+  width: 90%;
+  padding: 5px;
+  border: 2px solid #ff8e31;
+  font-size: 1.25em;
+  align-self: center;
+}
+
+.join * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.join {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.join-wrap {
+  position: relative;
+  min-width: 1000px;
+  min-height: 500px;
+  display: flex;
+}
+
+.join-wrap .join-info {
+  border-radius: 30px;
+  position: absolute;
+  padding: 0 20px;
+  top: -60px;
+  width: 300px;
+  height: 250px;
+  background: rgb(255, 145, 0);
+  z-index: 1;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.join-wrap .join-form {
+  border-radius: 30px;
+  position: absolute;
+  padding: 70px 70px;
+  padding-left: 200px;
+  width: calc(100% - 150px);
+  height: 100%;
+  z-index: 0;
+  left: 150px;
+  background-color: white;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+}
+
+.join-info h2 {
+  text-align: center;
+  line-height: 50px;
+  font-weight: 500;
+  font-size: 26px;
+}
+
+.join-wrap .join-form h2 {
+  color: orange;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.join-wrap .join-form .form-box {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+
+.join-wrap .join-form .form-box .input-box {
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.join-wrap .join-form .form-box .input-box.w50 {
+  width: 47%;
+}
+
+.join-wrap .join-form .form-box .input-box.w100 {
+  width: 100%;
+}
+
+.join-wrap .join-form .form-box .input-box input,
+.join-wrap .join-form .form-box .input-box textarea {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: 300;
+  border: none;
+  outline: none;
+  border-bottom: #ff8e31 solid 2px;
+  border-radius: 0;
+  font-family: inherit;
+}
+
+.join-wrap .join-form .form-box .input-box textarea {
+  height: 90px;
+}
+
+.join-wrap .join-form .form-box button {
+  padding: 15px 0;
+}
+
+button {
+  border: rgb(255, 145, 0) 3px solid;
+  background: none;
+  font-weight: 700;
+  transition: 0.3s;
+  color: rgb(255, 145, 0);
+  padding: 15px;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 600;
+  outline: none;
+}
+
+#features button:hover {
+  opacity: 1;
+  background: none;
+  color: rgb(255, 220, 174);
+  border-color: rgb(255, 220, 174);
+}
+
+#features button.active, button:hover {
+  background: rgb(255, 145, 0);
+  border-color: rgb(255, 145, 0);
+  color: white;
+  cursor: pointer;
+}
+
+#features button {
+  margin: 0 auto;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+
+#features #leave:hover {
+  background-color: red;
+  border-color: red;
+}
+
+
+
+.join-wrap .join-form .form-box .input-box span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  pointer-events: none;
+  font-weight: 300;
+  transition: 0.3s;
+  font-size: 18px;
+}
+
+.join-wrap .join-form .form-box .input-box input:focus + span,
+.join-wrap .join-form .form-box .input-box textarea:focus + span,
+.join-wrap .join-form .form-box .input-box input:valid + span,
+.join-wrap .join-form .form-box .input-box textarea:valid + span {
+  transform: translate(0, -20px);
+  font-size: 12px;
+}
+
+#study-room {
+  background: url(./resource/classroom3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#row1,
+#row2 {
+  margin: 3% 0;
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#row2 {
+  width: 80%;
+}
+
+#SelfStream,
+.remoteStream {
+  width: 20vw;
+  height: 20vh;
+  z-index: 99;
+}
+
+.video-border {
+  border: rgba(255, 168, 6, 0.3) 2px solid;
+}
+
+#features {
+  align-self: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
