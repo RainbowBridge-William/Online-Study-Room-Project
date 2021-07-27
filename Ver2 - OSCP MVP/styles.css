@@ -1,0 +1,141 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #FAFAFA;
+}
+
+
+
+#homePage header h1 {
+  width: 224px;
+  height: 22px;
+  margin-top: 15px;
+  margin-left: 21px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 22px;
+  color: #ff9500;
+}
+
+#homePage header h2 {
+  width: 26px;
+  height: 18px;
+  margin-top: 40px;
+  margin-left: 21px;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 18px;
+  /* identical to box height, or 75% */
+}
+
+#homePage #startCard {
+  margin: 25px 21px;
+  width: clac(100% - 42px);
+  height: 206px;
+  top: 120px;
+  background: no-repeat center url(./resources/start.svg);
+  background-size: cover;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#homePage #startCard h1 {
+  text-align: center;
+  color: white;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+#homePage #startCard h2 {
+  width: 96px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+#homePage #startButton {
+  position: relative;
+  top: 25px;
+  width: 157px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+hr {
+  width: calc(100% - 42px);
+  height: 2px;
+  margin: auto;
+  border: none;
+  background: #ebebeb;
+}
+
+#homePage #heading {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  margin-left: 21px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+#homePage #recommend {
+  width: calc(100% - 42px);
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 42vw);
+  row-gap: 17px;
+  justify-content: space-between;
+}
+
+#homePage #recommend .card {
+  width: 100%;
+  height: 160px;
+  background-color: #999999;
+  border-radius: 16px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 62px;
+  background-color: #f9f9f9;
+}
+
+footer #homeIcon {
+  width: 23px;
+  height: 50px;
+  margin-top: 8px;
+  background: no-repeat center url(./resources/homeSelected.svg);
+}
+
+footer #meIcon {
+  width: 23px;
+  height: 50px;
+  margin-top: 8px;
+  background: no-repeat center url(./resources/me.svg);
+}
+
+.placeHolder {
+  width: 100%;
+  height: 102px;
+}
