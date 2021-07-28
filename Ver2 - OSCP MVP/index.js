@@ -1,15 +1,26 @@
-let home = id("homeIcon");
-let me = id("meIcon");
-home.addEventListener("click", () => {
-  home.style.backgroundImage = "url(./resources/homeSelected.svg)";
-  me.style.backgroundImage = "url(./resources/me.svg)";
+// let home = id("homeIcon");
+// let me = id("meIcon");
+// home.addEventListener("click", () => {
+//   home.style.backgroundImage = "url(./resources/homeSelected.svg)";
+//   me.style.backgroundImage = "url(./resources/me.svg)";
+// });
+// me.addEventListener("click", () => {
+//   home.style.backgroundImage = "url(./resources/home.svg)";
+//   me.style.backgroundImage = "url(./resources/meSelected.svg)";
+// });
+let startButton = id("startButton");
+let homePage = id("homePage");
+let roomPage = id("roomPage");
+let backButton = id("back");
+console.log(homePage.style.display);
+startButton.addEventListener("click", () => {
+  homePage.style.display = "none";
+  roomPage.style.display = "block";
 });
-me.addEventListener("click", () => {
-  home.style.backgroundImage = "url(./resources/home.svg)";
-  me.style.backgroundImage = "url(./resources/meSelected.svg)";
+backButton.addEventListener("click", () => {
+  homePage.style.display = "block";
+  roomPage.style.display = "none";
 });
-
-
 
 function qs(name) {
   return document.querySelector(name);
@@ -24,9 +35,9 @@ function id(idName) {
 }
 
 function cl(className) {
-  return document.getElementsByClassName(className)
+  return document.getElementsByClassName(className);
 }
 
 function gen(tagName) {
-  document.createElement(`${tagName}`)
+  document.createElement(`${tagName}`);
 }
