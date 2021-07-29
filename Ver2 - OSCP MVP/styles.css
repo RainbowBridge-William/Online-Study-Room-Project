@@ -31,7 +31,6 @@ a {
   height: 22px;
   margin-top: 15px;
   margin-left: 21px;
-  font-style: normal;
   font-weight: bold;
   font-size: 28px;
   line-height: 22px;
@@ -62,6 +61,10 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#homePage #startCard:hover {
+  cursor: pointer;
 }
 
 #homePage #startCard h1 {
@@ -116,13 +119,14 @@ hr {
   width: calc(100% - 42px);
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 42vw);
+  grid-template-columns: repeat(auto-fill, clamp(120px, 42vw, 200px));
   row-gap: 17px;
   justify-content: space-between;
 }
 
 #roomPage header {
   margin-top: 40px;
+  margin-bottom: 25px;
   display: flex;
   align-items: center;
 }
@@ -136,6 +140,26 @@ hr {
   position: absolute;
   left: 21px;
   height: 1rem;
+}
+
+#roomPage header img:hover {
+  cursor: pointer;
+}
+
+#roomPage #roomContainer {
+  width: calc(100% - 42px);
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, clamp(120px, 42vw, 200px));
+  row-gap: 17px;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 300px) {
+  #roomPage #roomContainer,
+  #homePage #recommend {
+    grid-template-columns: 100%;
+  }
 }
 
 .card {
@@ -165,8 +189,6 @@ hr {
   font-weight: normal;
   font-size: 1rem;
 }
-
-
 
 footer {
   position: fixed;

@@ -8,12 +8,12 @@
 //   home.style.backgroundImage = "url(./resources/home.svg)";
 //   me.style.backgroundImage = "url(./resources/meSelected.svg)";
 // });
-let startButton = id("startButton");
+let startCard = id("startCard");
 let homePage = id("homePage");
 let roomPage = id("roomPage");
 let backButton = id("back");
 console.log(homePage.style.display);
-startButton.addEventListener("click", () => {
+startCard.addEventListener("click", () => {
   homePage.style.display = "none";
   roomPage.style.display = "block";
 });
