@@ -182,6 +182,7 @@ hr {
 }
 
 .card .cardTitle h3 {
+  width: calc(100% - 20px);
   position: relative;
   top: 10px;
   left: 10px;
