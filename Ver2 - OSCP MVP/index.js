@@ -12,14 +12,24 @@ let startCard = id("startCard");
 let homePage = id("homePage");
 let roomPage = id("roomPage");
 let backButton = id("back");
-console.log(homePage.style.display);
+let allRoomCard = qsa(".card");
+let roomSelected;
+
 startCard.addEventListener("click", () => {
   homePage.style.display = "none";
   roomPage.style.display = "block";
 });
+
 backButton.addEventListener("click", () => {
   homePage.style.display = "block";
   roomPage.style.display = "none";
+});
+
+allRoomCard.forEach((e) => {
+  e.addEventListener("click", () => {
+    roomSelected = e.id;
+    id("channelName").textContent(roomSelected);
+  });
 });
 
 function qs(name) {
