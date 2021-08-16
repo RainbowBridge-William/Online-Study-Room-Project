@@ -73,12 +73,14 @@ async function startCall() {
   });
 
   // 远端用户离开，销毁div节点
-  rtc.client.on("user-unpublished", (user, mediaType) => {
-    if (mediaType === "video") {
-      const playerContainer = document.getElementById(user.uid.toString());
-      playerContainer.remove();
-    }
-    count;
+  rtc.client.on("user-left", (user) => {
+    console.log(`user left ${user.uid}`);
+    let playerContainer = document.getElementById(
+      `player-wrapper-${user.uid.toString()}`
+    );
+    console.log(playerContainer);
+    playerContainer.remove();
+    count--;
   });
 
   // 加入目标频道
@@ -126,5 +128,3 @@ async function leaveCall() {
   // 离开频道。
   await rtc.client.leave();
 }
-
-function muteVideo() {}
