@@ -104,3 +104,13 @@ footer div i {
   color: white;
   transform: scale(1.5);
 }
+
+.mute-background {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: grey;
+  color: white;
+}

@@ -62,6 +62,9 @@ async function startCall() {
         player.style.height = "100%";
         player.style.transform = "rotateY(180deg)";
         document.getElementById(`player-wrapper-${uid}`).append(player);
+      } else if(document.getElementById(`mute-background-${user.uid}`)) {
+        document.getElementById(`player-${user.uid}`).style.display = "block";
+        document.getElementById(`mute-background-${user.uid}`).remove(); //remove mute background
       }
 
       remoteVideoTrack.play(`player-${uid}`);
@@ -71,6 +74,15 @@ async function startCall() {
     //   remoteAudioTrack.play();
     // }
   });
+
+
+  rtc.client.on("user-unpublished", (user) => {
+    let playerContainer = document.getElementById(
+      `player-wrapper-${user.uid.toString()}`
+    );
+    playerContainer.firstElementChild.style.display = "none";
+    playerContainer.append(createMuteBackground(user));
+  })
 
   // 远端用户离开，销毁div节点
   rtc.client.on("user-left", (user) => {
@@ -127,4 +139,14 @@ async function leaveCall() {
 
   // 离开频道。
   await rtc.client.leave();
+}
+
+function createMuteBackground(user) {
+  let muteBackground = document.createElement("div");
+  let muteIcon = document.createElement("i");
+  muteBackground.className = "mute-background";
+  muteBackground.id = `mute-background-${user.uid}`;
+  muteIcon.className = "fas fa-video-slash";
+  muteBackground.append(muteIcon);
+  return muteBackground;
 }
