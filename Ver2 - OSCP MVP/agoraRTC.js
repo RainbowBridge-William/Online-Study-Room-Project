@@ -19,18 +19,6 @@ let options = {
   token: null,
 };
 
-muteVideoButton.addEventListener("click", () => {
-  if (video == true) {
-    muteVideoButton.firstElementChild.className = "fas fa-video-slash";
-    rtc.localVideoTrack.setMuted(true);
-    video = false;
-  } else {
-    muteVideoButton.firstElementChild.className = "fas fa-video";
-    rtc.localVideoTrack.setMuted(false);
-    video = true;
-  }
-});
-
 back.addEventListener("click", () => {
   leaveCall();
   location.href = "./index.html";
@@ -55,6 +43,7 @@ async function startCall() {
         playerWrapper.id = `player-wrapper-${uid}`;
         playerWrapper.style.width = "95%";
         playerWrapper.style.height = "95%";
+        playerWrapper.style.overflow = "hidden";
         document.getElementById("videoContainer").append(playerWrapper);
         const player = document.createElement("div");
         player.id = `player-${uid}`;
@@ -62,7 +51,7 @@ async function startCall() {
         player.style.height = "100%";
         player.style.transform = "rotateY(180deg)";
         document.getElementById(`player-wrapper-${uid}`).append(player);
-      } else if(document.getElementById(`mute-background-${user.uid}`)) {
+      } else if (document.getElementById(`mute-background-${user.uid}`)) {
         document.getElementById(`player-${user.uid}`).style.display = "block";
         document.getElementById(`mute-background-${user.uid}`).remove(); //remove mute background
       }
@@ -75,14 +64,13 @@ async function startCall() {
     // }
   });
 
-
   rtc.client.on("user-unpublished", (user) => {
     let playerContainer = document.getElementById(
       `player-wrapper-${user.uid.toString()}`
     );
     playerContainer.firstElementChild.style.display = "none";
     playerContainer.append(createMuteBackground(user));
-  })
+  });
 
   // 远端用户离开，销毁div节点
   rtc.client.on("user-left", (user) => {
@@ -107,6 +95,7 @@ async function startCall() {
   // rtc.localAudioTrack = await AgoraRTC.createMicrophoneAudioTrack();
   if (count >= 6) {
     alert("房间人满，当前为观众");
+    muteVideoButton.style.display = "none";
   } else {
     rtc.localVideoTrack = await AgoraRTC.createCameraVideoTrack({
       encoderConfig: "180p",
@@ -115,12 +104,31 @@ async function startCall() {
     localContainer.id = uid.toString();
     localContainer.style.width = "95%";
     localContainer.style.height = "95%";
+    localContainer.style.overflow = "hidden"
+    localContainer.append(createMuteBackground(uid.toString()));
+    localContainer.firstElementChild.style.display = "none";
     document.getElementById("videoContainer").append(localContainer);
     rtc.localVideoTrack.play(localContainer);
     await rtc.client.publish([rtc.localVideoTrack]);
     // await rtc.client.publish([rtc.localAudioTrack, rtc.localVideoTrack]);
     console.log("publish success!");
   }
+
+  // mute
+  muteVideoButton.addEventListener("click", () => {
+    let localContainer = document.getElementById(uid.toString())
+    if (video == true) {
+      localContainer.firstElementChild.style.display = "flex";
+      muteVideoButton.firstElementChild.className = "fas fa-video-slash";
+      rtc.localVideoTrack.setMuted(true);
+      video = false;
+    } else {
+      localContainer.firstElementChild.style.display = "none";
+      muteVideoButton.firstElementChild.className = "fas fa-video";
+      rtc.localVideoTrack.setMuted(false);
+      video = true;
+    }
+  });
 }
 
 startCall();
