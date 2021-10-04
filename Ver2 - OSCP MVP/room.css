@@ -1,0 +1,116 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  /* background: url(./resources/roomBackground-corp.png) center no-repeat;
+  background-size: 100%; */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+	width: 0px;
+	height: 0px;
+  background-color: transparent;
+}
+
+header {
+  top: 0;
+  width: 100%;
+  height: 10%;
+  background-color: rgb(255 ,190, 96);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  color: white;
+  font-size: 1.5rem;
+}
+
+header a {
+  position: absolute;
+  left: 17px;
+  color: white;
+  transform: scale(1.4);
+  text-decoration: none;
+}
+
+#room {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#room img {
+  width: 100%;
+  height: auto;
+}
+
+#room #board {
+  width: 90vw;
+  height: 73vw;
+}
+
+#room #board #videoContainer {
+  width: calc(90vw - 20px);
+  height: 67.5vw;
+  position: absolute;
+  margin: 5px 10px 0px 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(3, 33.33%);
+  justify-items: center;
+  align-items: center;
+}
+
+#room #board #videoContainer * {
+  border-radius: 5px;
+}
+
+#room #board #videoContainer .video {
+  width: 50%;
+  height: calc(100% / 3);
+}
+
+footer {
+  top: 0;
+  width: 100%;
+  height: 10%;
+  background-color: rgb(255 ,190, 96);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer div {
+  height: 100%;
+  width: calc(100% / 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer div i {
+  color: white;
+  transform: scale(1.5);
+}
+
+.mute-background {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: grey;
+  color: white;
+}

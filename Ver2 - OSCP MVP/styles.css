@@ -1,0 +1,230 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #fafafa;
+  overflow: scroll;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+	width: 0px;
+	height: 0px;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+#homePage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#roomPage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+#homePage header h1 {
+  width: 224px;
+  height: 22px;
+  margin-top: 15px;
+  margin-left: 21px;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 22px;
+  color: #ff9500;
+}
+
+#homePage header h2 {
+  width: 26px;
+  height: 18px;
+  margin-top: 40px;
+  margin-left: 21px;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 18px;
+  /* identical to box height, or 75% */
+}
+
+#homePage #startCard {
+  margin: 25px 21px;
+  width: clac(100% - 42px);
+  height: 206px;
+  top: 120px;
+  background: no-repeat center url(./resources/start.svg);
+  background-size: cover;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#homePage #startCard:hover {
+  cursor: pointer;
+}
+
+#homePage #startCard h1 {
+  text-align: center;
+  color: white;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+#homePage #startCard h2 {
+  width: 96px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+#homePage #startButton {
+  position: relative;
+  top: 25px;
+  width: 157px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+hr {
+  width: calc(100% - 42px);
+  height: 2px;
+  margin: auto;
+  border: none;
+  background: #ebebeb;
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+#homePage .heading {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  margin-left: 21px;
+}
+
+#homePage #recommend {
+  width: calc(100% - 42px);
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, clamp(120px, 42vw, 200px));
+  row-gap: 17px;
+  justify-content: space-between;
+}
+
+#roomPage header {
+  margin-top: 40px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+#roomPage header .heading {
+  width: 100%;
+  text-align: center;
+}
+
+#roomPage header img {
+  position: absolute;
+  left: 21px;
+  height: 1rem;
+}
+
+#roomPage header img:hover {
+  cursor: pointer;
+}
+
+#roomPage #roomContainer {
+  width: calc(100% - 42px);
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, clamp(120px, 42vw, 200px));
+  row-gap: 17px;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 300px) {
+  #roomPage #roomContainer,
+  #homePage #recommend {
+    grid-template-columns: 100%;
+  }
+}
+
+.card {
+  width: 100%;
+  height: 160px;
+  background-color: white;
+  border-radius: 16px;
+}
+
+.card .cardImg {
+  background-color: #ff9500;
+  height: 66.7%;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.card .cardTitle {
+  position: relative;
+  height: 60px;
+}
+
+.card .cardTitle h3 {
+  width: calc(100% - 20px);
+  position: relative;
+  top: 10px;
+  left: 10px;
+  color: black;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 62px;
+  background-color: #f9f9f9;
+}
+
+footer #homeIcon {
+  width: 23px;
+  height: 50px;
+  margin-top: 8px;
+  background: no-repeat center url(./resources/homeSelected.svg);
+}
+
+footer #meIcon {
+  width: 23px;
+  height: 50px;
+  margin-top: 8px;
+  background: no-repeat center url(./resources/me.svg);
+}
+
+.placeHolder {
+  width: 100%;
+  height: 102px;
+}
