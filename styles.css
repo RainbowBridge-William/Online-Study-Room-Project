@@ -14,6 +14,7 @@ a {
   color: inherit;
   text-decoration: none;
   outline: none;
+  display: flex
 }
 
 a i {
@@ -329,7 +330,7 @@ button {
   z-index: 99;
 }
 
-.video-border {
+.video-border { 
   border: rgba(255, 168, 6, 0.3) 2px solid;
 }
 
